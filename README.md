@@ -1,97 +1,29 @@
 # Clonebot
 
-[![Clonebot Logo](http://www.randomnoun.com/wpf/shell32-avi/tshell32_160.gif)](#)
+After setting up the Python app (using a subdomain), upload the files to the created folder via the file manager. Open the cPanel terminal and execute the path you received during the Python app setup:
 
-#### An [opensource](https://choosealicense.com/licenses/gpl-3.0/) Telegram robot can clone media & text from any chat to your own chat.
-Read the [documentation](https://space4renjith.blogspot.com/2022/05/clonebot-technical-documentation.html) to know how to use the bot
+source /home/username/virtualenv/botfolder/3.9/bin/activate && cd /home/username/botfolder
 
----
+Run the following command to install the required packages:
 
-**DUE TO SOME SECURITY REASONS, DEPLOY TO HEROKU FROM THIS REPOSITORY HAS BEEN ABOLISHED!**
-<br>
-*This repository is no longer supporting Heroku deployment. Use a paid VPS / Raspberry Pi / Local PC instead. See the documentation for more.*
+python -m pip install -r requirements.txt
 
-[@M4Mallu](https://t.me/rmprojects)
+After the installation, exit the terminal. Go to the file manager, navigate to virtualenv/botfolder/3.9/lib/python3.9/site-packages/pyrogram/storage, and replace the file memory_storage.py to fix the error (struct.error: unpack requires a buffer of 271 bytes).
 
-<details>
-    <summary><b>Deploy Using Docker</b></summary>
+Return to the terminal and execute:
 
-1. **Deploying on VPS Using Docker**
+source /home/username/virtualenv/botfolder/3.9/bin/activate && cd /home/username/botfolder
 
-    - Start Docker daemon (skip if already running), if installed by snap then use 2nd command:
-    
-        ```bash
-        sudo dockerd
-        sudo snap start docker
-        ```
+Then run:
 
-        Note: If not started or not starting, run the command below then try to start.
+python main.py
 
-        ```bash
-        sudo apt install docker.io
-        ```
+DONE!
 
-    - Build Docker image:
+To keep the bot running 24/7, go to cron jobs and configure it with:
 
-        ```bash
-        sudo docker build . -t clone-bot
-        ```
+/home/username/botfolder/start.sh
+""
 
-    - Run the image:
-
-        ```bash
-        sudo docker run clone-bot
-        ```
-
-    - To stop the image:
-
-        ```bash
-        sudo docker ps
-        sudo docker stop id
-        ```
-
-    - To clear the container:
-
-        ```bash
-        sudo docker container prune
-        ```
-
-    - To delete the images:
-
-        ```bash
-        sudo docker image prune -a
-        ```
-
-2. **Deploying on VPS Using docker-compose**
-
-    **NOTE**: If you want to use a port other than 80, change it in docker-compose.yml
-
-    ```bash
-    sudo apt install docker-compose
-    ```
-
-    - Build and run Docker image:
-
-    ```bash
-    sudo docker-compose up
-    ```
-
-    - After editing files with nano for example (nano start.sh):
-
-    ```bash
-    sudo docker-compose up --build
-    ```
-
-    - To stop the image:
-
-    ```bash
-    sudo docker-compose stop
-    ```
-
-    - To run the image:
-
-    ```bash
-    sudo docker-compose start
-    ```
 
 </details>
