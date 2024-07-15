@@ -8,7 +8,7 @@ Run the following command to install the required packages:
 
 python -m pip install -r requirements.txt
 
-After the installation, exit the terminal. Go to the file manager, navigate to virtualenv/botfolder/3.9/lib/python3.9/site-packages/pyrogram/storage, and replace the file memory_storage.py to fix the error (struct.error: unpack requires a buffer of 271 bytes).
+After the installation, exit the terminal. Go to the file manager, navigate to virtualenv/botfolder/3.9/lib/python3.9/site-packages/pyrogram/storage, and replace the file memory_storage.py to fix the error of pyrogram (struct.error: unpack requires a buffer of 271 bytes).
 
 Return to the terminal and execute:
 
