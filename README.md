@@ -1,4 +1,5 @@
 # Clonebot Bot adapted for a shared hosting environment like cPanel
+All credits to [@M4Mallu](https://t.me/rmprojects)
 
 After setting up the Python app (using a subdomain), upload the files to the created folder via the file manager. Open the cPanel terminal and execute the path you received during the Python app setup:
 
